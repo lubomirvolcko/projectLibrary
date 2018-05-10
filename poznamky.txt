@@ -1,0 +1,21 @@
+DB name: Library
+
+tables:
+  writer:
+    - id
+    - lname
+    - fname
+
+  book:
+    - id
+    - nazov
+    - year
+    - idw (id writer)
+
+crate database library;
+
+create table writer (id int primary key auto_increment, lastname varchar(30), 
+firstname varchar(30));
+
+create table book (id int primary key auto_increment, name varchar(30), year int(4), 
+idw int, foreign key (idw) references writer (id));
